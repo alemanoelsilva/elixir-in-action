@@ -3,6 +3,7 @@ defmodule Geometry do
 
   # import external modules
   import IO
+  import List
   alias Integer, as: I
 
   # modules attributes
@@ -47,6 +48,24 @@ defmodule Geometry do
     division_remainder = rem(5,2) # 1
     large_number = 1_000_000
     extra_large_number = 999999999999999999999999999999999999999999999999999999999999999999999999999999
+    some_atom = :some_atom_here
+    puts(true == :true) # it is true :0
+    elixir_null = :nil
+    puts(nil == :nil) # it is true :0
+    tuple = {"Bob", 25}
+    elem(tuple, 1) # it returns 25
+    new_tuple = put_elem(tuple, 1, 20) # it returns a new tuple changing the 25 value to 20
+    list = [2, 3, 5, 7]
+    length(list) # 4
+    puts(7 in list) # true
+    new_list = List.replace_at(list, 1, 99)
+    for n <- new_list, do: puts(n) # forEach
+    puts("List ends")
+    head = hd(new_list)
+    tail = tl(new_list)
+    a_list = [:some_value | new_list]
+    for l <- a_list, do: puts(l)
+    puts("List ends")
   end
 end
 
